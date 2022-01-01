@@ -12,7 +12,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        String forObject = restTemplate.getForObject("http://client/student/detail", String.class);
+        String forObject = restTemplate.getForObject("http://client/detail", String.class);
         return forObject;
     }
 }
