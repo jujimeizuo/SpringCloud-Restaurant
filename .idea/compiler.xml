@@ -10,17 +10,19 @@
         <module name="Restaurant" />
         <module name="user-2" />
         <module name="user-1" />
+        <module name="comsumer" />
         <module name="eureka" />
-        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gateway" target="1.8" />
       <module name="gateway (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Restaurant" options="-parameters" />
+      <module name="comsumer" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="gateway (1)" options="-parameters" />
