@@ -1,0 +1,15 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.21.234.20:3306/restaurant?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  application:
+    name: login
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,10 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false  #当前项目不注册服务
+    fetch-registry: false  #当前项目不需要发现服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
