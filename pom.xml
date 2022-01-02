@@ -9,7 +9,8 @@
         <module>dish</module>
         <module>comsumer-dish</module>
         <module>comsumer-login</module>
-
+        <module>order</module>
+        <module>Order_include</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
