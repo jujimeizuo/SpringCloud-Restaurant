@@ -17,6 +17,7 @@ import java.util.Map;
 @RequestMapping(value = "/dish")
 @DefaultProperties(defaultFallback = "defaultFallback")
 public class DishController {
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -54,6 +55,15 @@ public class DishController {
         assert o != null;
         log.info(o.toString());
         return o;
+    }
+
+    @GetMapping("/queryDishByDid/{did}")
+    @HystrixCommand
+    public Object queryDishByDid(@PathVariable String did) {
+        Object forObject = restTemplate.getForObject("http://dish/queryDishByDid/" + did, Object.class);
+        assert forObject != null;
+        log.info(forObject.toString());
+        return forObject;
     }
 
     /**

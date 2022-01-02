@@ -16,6 +16,7 @@ import java.util.Map;
 @Slf4j
 @DefaultProperties(defaultFallback = "defaultFallback")
 public class IncludeController {
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -56,7 +57,7 @@ public class IncludeController {
     @GetMapping("/delbyid/{id}")
     @HystrixCommand
     public Object getbyidOrder(@PathVariable int id) {
-        Object o = restTemplate.getForObject("http://order-include/getbyid/"+ id, Object.class);
+        Object o = restTemplate.getForObject("http://order-include/getbyid/" + id, Object.class);
         assert o != null;
         log.info(o.toString());
         return o;
@@ -64,7 +65,7 @@ public class IncludeController {
     @GetMapping("/getbyid/{oid}")
     @HystrixCommand
     public Object getbycidOrder(@PathVariable int oid) {
-        Object o = restTemplate.getForObject("http://order-include/getbyid/"+ oid, Object.class);
+        Object o = restTemplate.getForObject("http://order-include/getbyid/" + oid, Object.class);
         assert o != null;
         log.info(o.toString());
         return o;

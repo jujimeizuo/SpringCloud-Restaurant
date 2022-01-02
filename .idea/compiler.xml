@@ -7,17 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="login" />
-        <module name="comsumer-login" />
-        <module name="comsumer-dish" />
-        <module name="order" />
         <module name="erueka" />
         <module name="dish" />
+        <module name="comsumer-login" />
         <module name="Order_include" />
+        <module name="login" />
+        <module name="comsumer-dish" />
+        <module name="order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="comsumer" target="1.8" />
+      <module name="comsumer-order" target="8" />
+      <module name="comsumer-order-include" target="8" />
       <module name="eureka" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +29,8 @@
       <module name="Restaurant" options="-parameters" />
       <module name="comsumer-dish" options="-parameters" />
       <module name="comsumer-login" options="-parameters" />
+      <module name="comsumer-order" options="-parameters" />
+      <module name="comsumer-order-include" options="-parameters" />
       <module name="dish" options="-parameters" />
       <module name="erueka" options="-parameters" />
       <module name="login" options="-parameters" />

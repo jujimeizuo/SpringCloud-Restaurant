@@ -53,8 +53,17 @@ public class DishController {
     public Result queryAllDish() {
         Result result;
         List<Dish> dishes = dishService.queryAllDish();
-        result = new Result().code(ResultCode.SUCCESS).message("查询").data("dishes", dishes);
-        log.info("port: " + port + "------查询: " + result.toString());
+        result = new Result().code(ResultCode.SUCCESS).message("查询所有信息").data("dishes", dishes);
+        log.info("port: " + port + "------查询菜品所有信息: " + result.toString());
+        return result;
+    }
+
+    @GetMapping(value = "/queryDishByDid/{did}")
+    public Result queryDishByDid(@PathVariable String did) {
+        Result result;
+        Dish dish = dishService.queryDishByDid(did);
+        result = new Result().code(ResultCode.SUCCESS).message("查询did信息").data("dish", dish);
+        log.info("port: " + port + "------查询did信息: " + result.toString());
         return result;
     }
 }

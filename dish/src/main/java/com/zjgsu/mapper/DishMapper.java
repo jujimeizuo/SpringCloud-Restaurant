@@ -31,4 +31,11 @@ public interface DishMapper {
      * @return
      */
     List<Dish> queryAllDish() ;
+
+    /**
+     * 根据did查询菜品
+     * @param did
+     * @return
+     */
+    Dish queryDishByDid(String did) ;
 }

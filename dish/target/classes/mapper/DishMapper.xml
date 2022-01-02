@@ -20,6 +20,11 @@
     <select id="queryAllDish" resultType="com.zjgsu.pojo.Dish">
         select * from dish
     </select>
+
+    <select id="queryDishByDid" resultType="com.zjgsu.pojo.Dish">
+        select * from dish where did=#{did}
+    </select>
+
 </mapper>
 
 

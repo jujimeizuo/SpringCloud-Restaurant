@@ -41,4 +41,7 @@ public class DishServiceImpl implements DishService {
         return dishMapper.queryAllDish();
     }
 
+    public Dish queryDishByDid(String did) {
+        return dishMapper.queryDishByDid(did);
+    }
 }

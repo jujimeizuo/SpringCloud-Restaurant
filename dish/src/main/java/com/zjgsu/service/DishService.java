@@ -15,4 +15,5 @@ public interface DishService {
 
     List<Dish> queryAllDish() ;
 
+    Dish queryDishByDid(String did);
 }
