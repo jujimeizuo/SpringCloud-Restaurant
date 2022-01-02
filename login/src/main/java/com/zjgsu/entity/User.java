@@ -21,7 +21,7 @@ public class User {
     private String repass;
     @JsonIgnore
     private String repasstime;
-//    private String email;
+    private String email;
     private String phone;
 //    private String sex;
 //    private String birthday;

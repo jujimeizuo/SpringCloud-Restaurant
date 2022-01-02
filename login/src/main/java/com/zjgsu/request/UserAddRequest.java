@@ -6,4 +6,6 @@ import lombok.Data;
 public class UserAddRequest {
     private String phone;
     private String pass;
+    private String email;
+    private String tmp;
 }

@@ -12,13 +12,9 @@ public interface UserReponsitory extends JpaRepository<User, Integer> {
 
     boolean existsUserByUid(Integer id);
 
-//    boolean existsUserByEmail(String email);
-//    List<User> findUserByUname(String name);
-//    List<User> findUsersByEmail(String email);
+    boolean existsUserByEmail(String email);
+    List<User> findUsersByEmail(String email);
     List<User> findUserByUid(Integer uid);
     boolean existsUserByPhone(String phone);
     List<User> findUserByPhone(String phone);
-//    boolean existsUserByUname(String name);
-//    @Transactional
-//    void deleteUserByUid(Integer uid);
 }

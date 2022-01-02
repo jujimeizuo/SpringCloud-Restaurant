@@ -13,6 +13,18 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  mail:
+    host: smtp.163.com
+    username: kepadedaidai@163.com
+    password: TBFQUVJUAVBPTCON
+    port: 465
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+        debug: true
 
 eureka:
   client:
