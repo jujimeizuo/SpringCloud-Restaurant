@@ -7,14 +7,17 @@ import com.zjgsu.service.DishService;
 import com.zjgsu.service.vo.DishVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/dish")
 @Slf4j
 public class DishController {
+
+    @Value("${server.port}")
+    private String port;
 
     @Autowired
     private DishService dishService;
@@ -23,7 +26,7 @@ public class DishController {
     public Result insertDish(@RequestBody DishVo dishVo) {
         String msg = dishService.insertDish(dishVo);
         Result result = new Result().code(ResultCode.SUCCESS).message(msg);
-        log.info("新增: " + result.toString());
+        log.info("port: " + port + "------新增: " + result.toString());
         return result;
     }
 
@@ -32,7 +35,7 @@ public class DishController {
         Result result;
         String msg = dishService.deleteDish(did);
         result = new Result().code((!msg.equals("OK") ? ResultCode.ERROR : ResultCode.SUCCESS)).message(msg);
-        log.info("删除: " + result.toString());
+        log.info("port: " + port + "------删除: " + result.toString());
         return result;
     }
 
@@ -41,7 +44,7 @@ public class DishController {
         Result result;
         String msg = dishService.updateDish(dish);
         result = new Result().code((!msg.equals("OK") ? ResultCode.ERROR : ResultCode.SUCCESS)).message(msg);
-        log.info("更新: " + result.toString());
+        log.info("port: " + port + "------更新: " + result.toString());
         return result;
     }
 
@@ -49,8 +52,8 @@ public class DishController {
     public Result queryAllDish() {
         Result result;
         List<Dish> dishes = dishService.queryAllDish();
-        result = new Result().code(ResultCode.SUCCESS).message("查询").data("菜品", dishes);
-        log.info("查询: " + result.toString());
+        result = new Result().code(ResultCode.SUCCESS).message("查询").data("dishes", dishes);
+        log.info("port: " + port + "------查询: " + result.toString());
         return result;
     }
 }

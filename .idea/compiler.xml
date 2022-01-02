@@ -10,12 +10,14 @@
         <module name="login" />
         <module name="erueka" />
         <module name="dish" />
+        <module name="comsumer-dish" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Restaurant" options="-parameters" />
+      <module name="comsumer-dish" options="-parameters" />
       <module name="dish" options="-parameters" />
       <module name="erueka" options="-parameters" />
       <module name="login" options="-parameters" />
