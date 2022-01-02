@@ -21,6 +21,7 @@ public class DishServiceImpl implements DishService {
         dish.setDid(UUID.randomUUID().toString());
         dish.setName(dishVo.getName());
         dish.setPrice(dishVo.getPrice());
+        dish.setNum(dishVo.getNum());
         dish.setPic(dishVo.getPic());
         boolean flag = dishMapper.insertDish(dish);
         return flag ? "OK" : "NO";
