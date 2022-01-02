@@ -8,6 +8,7 @@
         <module>erueka</module>
         <module>dish</module>
         <module>comsumer-dish</module>
+        <module>comsumer-login</module>
 
     </modules>
     <parent>

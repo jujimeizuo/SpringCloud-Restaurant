@@ -5,14 +5,12 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zjgsu.entity.Dish;
 import com.zjgsu.entity.DishVo;
 import lombok.extern.slf4j.Slf4j;
-import org.omg.CORBA.TIMEOUT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
