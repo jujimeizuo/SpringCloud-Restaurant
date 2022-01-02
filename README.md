@@ -8,5 +8,3 @@
 - RestTemplate + Ribbon
 - Hystrix
 
-### SpringBoot
-- mybatis
