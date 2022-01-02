@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="login" />
-        <module name="dish" />
-        <module name="erueka" />
-        <module name="comsumer-dish" />
         <module name="comsumer-login" />
+        <module name="comsumer-dish" />
+        <module name="order" />
+        <module name="erueka" />
+        <module name="dish" />
+        <module name="Order_include" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,12 +23,14 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Order_include" options="-parameters" />
       <module name="Restaurant" options="-parameters" />
       <module name="comsumer-dish" options="-parameters" />
       <module name="comsumer-login" options="-parameters" />
       <module name="dish" options="-parameters" />
       <module name="erueka" options="-parameters" />
       <module name="login" options="-parameters" />
+      <module name="order" options="-parameters" />
     </option>
   </component>
 </project>

@@ -4,7 +4,7 @@
 <mapper namespace="com.zjgsu.mapper.DishMapper">
 
     <insert id="insertDish" parameterType="com.zjgsu.pojo.Dish">
-        insert into dish (did, name, price, pic) values (#{did},#{name},#{price},#{pic})
+        insert into dish (did, name, price, num, pic) values (#{did},#{name},#{price},#{num},#{pic})
     </insert>
 
     <delete id="deleteDish">
@@ -13,7 +13,7 @@
 
     <update id="updateDish" parameterType="com.zjgsu.pojo.Dish">
         update dish
-        set name=#{name}, price=#{price}, pic=#{pic}
+        set name=#{name}, price=#{price}, pic=#{pic}, num=#{num}
         where did=#{did}
     </update>
 
