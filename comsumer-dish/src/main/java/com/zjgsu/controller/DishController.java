@@ -1,5 +1,6 @@
 package com.zjgsu.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.zjgsu.entity.Dish;
 import com.zjgsu.entity.DishVo;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping(value = "/dish")
 @Slf4j
+@DefaultProperties
 public class DishController {
     @Autowired
     private RestTemplate restTemplate;
