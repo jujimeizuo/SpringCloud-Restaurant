@@ -23,8 +23,7 @@ public class UserService {
     private JavaMailSender javaMailSender;
 
 
-    public void sendEmail(String address, String code)
-    {
+    public void sendEmail(String address, String code)  {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("验证码");
         message.setFrom("kepadedaidai@163.com");
@@ -33,11 +32,11 @@ public class UserService {
         message.setText("您的验证码是" + code + ",验证码10分钟内有效,如果这不是您的操作，请忽略这封邮件");
         javaMailSender.send(message);
     }
+
     boolean findByEmail(String email){
         return userReponsitory.existsUserByEmail(email);
     }
-    public List<User> saveUser(User user)
-    {
+    public List<User> saveUser(User user)  {
         List<User> list = new ArrayList<>();
         list.add(userReponsitory.save(user));
         return list;
@@ -75,8 +74,8 @@ public class UserService {
         }
         else return new Result<>("密码错误",-2);
     }
-    public Result<List<User>> sentEmail(String email){
-        if(findByEmail(email)){
+    public Result<List<User>> sentEmail(String email) {
+        if(!findByEmail(email)){
             User user = new User();
             user.setEmail(email);
             userReponsitory.save(user);

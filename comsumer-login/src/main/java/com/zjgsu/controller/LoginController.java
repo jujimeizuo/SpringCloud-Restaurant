@@ -5,10 +5,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zjgsu.entity.UserAddRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -21,6 +18,14 @@ public class LoginController {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @GetMapping("/sentEmail/{email}")
+    public Object sentEmail(@PathVariable String email) {
+        Object forObject = restTemplate.getForObject("http://login/sentEmail/" + email, Object.class);
+        assert forObject != null;
+        log.info(forObject.toString());
+        return forObject;
+    }
 
     @PostMapping("/reg")
     @HystrixCommand

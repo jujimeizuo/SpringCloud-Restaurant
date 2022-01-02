@@ -23,6 +23,7 @@ public class DishController {
     private DishService dishService;
 
     @PostMapping(value = "/insertDish")
+
     public Result insertDish(@RequestBody DishVo dishVo) {
         String msg = dishService.insertDish(dishVo);
         Result result = new Result().code(ResultCode.SUCCESS).message(msg);
