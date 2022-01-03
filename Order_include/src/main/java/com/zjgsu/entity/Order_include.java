@@ -9,6 +9,6 @@ import javax.persistence.Table;
 public class Order_include {
     private int uid;
     private int oid;
-    private int did;
+    private String did;
     private int number;
 }
