@@ -22,7 +22,7 @@ public class IncludeController {
 
     @PostMapping("/add")
     @HystrixCommand
-    public Object addOrder(@RequestParam("oid")int oid,@RequestParam("did")int did) {
+    public Object addOrder(@RequestParam("oid")int oid,@RequestParam("did")String did) {
         Order_include order_include = new Order_include();
         order_include.setOid(oid);
         order_include.setDid(did);
@@ -34,7 +34,7 @@ public class IncludeController {
     }
     @PostMapping("/update")
     @HystrixCommand
-    public Object updateOrder(@RequestParam("oid")int oid,@RequestParam("did")int did,@RequestParam("number")int number) {
+    public Object updateOrder(@RequestParam("oid")int oid,@RequestParam("did")String did,@RequestParam("number")int number) {
         Order_include order_include = new Order_include();
         order_include.setNumber(number);
         order_include.setDid(did);
