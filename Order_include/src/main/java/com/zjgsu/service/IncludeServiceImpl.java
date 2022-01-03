@@ -60,6 +60,7 @@ public class IncludeServiceImpl implements IncludeService{
         if(order_include1 ==null){
             return new JsonResult(400,"no such order",null);
         }
+        include.setUid(order_include1.getUid());
         order_includeMapper.update(include,wrapper);
         return new JsonResult(ResultCode.SUCCESS);
     }

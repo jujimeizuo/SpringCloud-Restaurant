@@ -1,0 +1,22 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: Comsumer-Dish
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# hystrix熔断器，3秒后自动超时
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+      circuitBreaker:
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 10000
+        requestVolumeThreshold: 10

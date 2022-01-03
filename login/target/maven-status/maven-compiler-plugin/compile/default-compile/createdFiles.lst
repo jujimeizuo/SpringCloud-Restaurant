@@ -1,0 +1,11 @@
+com\zjgsu\repository\UsertempRepository.class
+com\zjgsu\entity\Usertemp.class
+com\zjgsu\repository\UserReponsitory.class
+com\zjgsu\request\UserAddRequest.class
+com\zjgsu\utils\checkInt.class
+com\zjgsu\LoginApplication.class
+com\zjgsu\utils\Md5.class
+com\zjgsu\entity\Result.class
+com\zjgsu\controller\UserHandler.class
+com\zjgsu\entity\User.class
+com\zjgsu\server\UserService.class
