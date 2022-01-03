@@ -58,7 +58,7 @@ public class OrderController {
 
     @RequestMapping("/surearrive/{uid}")
     public JsonResult getallOrder(@PathVariable int uid){
-        JsonResult jsonResult = orderService.getAllOrder();
+        JsonResult jsonResult = orderService.sureArrive(uid);
         return jsonResult;
     }
 }
