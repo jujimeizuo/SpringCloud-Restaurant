@@ -67,4 +67,13 @@ public class OrderServiceImpl implements com.zjgsu.service.OrderService {
         List<Order_dish> order_dishArrayList = orderMapper.selectList(wrapper);
         return new JsonResult(ResultCode.SUCCESS,order_dishArrayList);
     }
+    @Override
+    public JsonResult sureArrive(int uid) {
+        QueryWrapper<Order_dish> wrapper = new QueryWrapper<>();
+        wrapper.eq("id",uid);
+        Order_dish order_dish = orderMapper.selectOne(wrapper);
+        order_dish.setState(1);
+        orderMapper.update(order_dish,wrapper);
+        return new JsonResult(ResultCode.SUCCESS);
+    }
 }

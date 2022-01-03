@@ -21,10 +21,9 @@ public class OrderController {
 
     @PostMapping("/add")
     @HystrixCommand
-    public Object addOrder(@RequestParam("userid")int uid,@RequestParam("dish") String[] dishes) {
+    public Object addOrder(@RequestParam("userid")int uid) {
         Order_dish order_dish = new Order_dish();
         order_dish.setCid(uid);
-        order_dish.setDishes(dishes);
         Object o = restTemplate.postForObject("http://order/add", order_dish, Object.class);
         assert o != null;
         log.info(o.toString());
@@ -64,6 +63,16 @@ public class OrderController {
         log.info(o.toString());
         return o;
     }
+
+    @HystrixCommand
+    @GetMapping("/surearrive/{uid}")
+    public Object sureOrder(@PathVariable int uid) {
+        Object o = restTemplate.getForObject("http://order/surearrive/"+ uid, Object.class);
+        assert o != null;
+        log.info(o.toString());
+        return o;
+    }
+
     @HystrixCommand
     @GetMapping("/getall")
     public Object queryAllDish() {

@@ -11,4 +11,5 @@ public interface OrderService {
     JsonResult getOrderByid(int uid);
     JsonResult getOrderByuser(int userid);
     JsonResult getAllOrder();
+    public JsonResult sureArrive(int uid);
 }
