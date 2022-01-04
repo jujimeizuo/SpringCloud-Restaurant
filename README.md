@@ -7,4 +7,3 @@
 - Eureka
 - RestTemplate + Ribbon
 - Hystrix
-
